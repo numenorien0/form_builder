@@ -6,13 +6,10 @@
 	<description>Créez vos formulaires</description>
 	<state>enabled</state>
 	<version>1.1</version>
-<<<<<<< HEAD
 	<checkVersionAt></checkVersionAt>
 	<downloadVersionAt></downloadVersionAt>
-=======
 	<checkVersionAt>https://raw.githubusercontent.com/numenorien0/form_builder/master/version.txt</checkVersionAt>
 	<downloadVersionAt>https://github.com/numenorien0/form_builder/archive/master.zip</downloadVersionAt>
->>>>>>> 8393d67e64ecccf3d6896215553ba9fb00c753f8
 	<pages>
 		<page>index</page>
 	</pages>
