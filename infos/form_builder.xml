@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<informations>
+	<id>form_builder</id>
+	<name>Créateur de formulaire</name>
+	<icone>galerie.jpg</icone>
+	<description>Créez vos formulaires</description>
+	<state>enabled</state>
+	<version>1.0</version>
+	<checkVersionAt></checkVersionAt>
+	<downloadVersionAt></downloadVersionAt>
+	<pages>
+		<page>index</page>
+	</pages>
+</informations>
