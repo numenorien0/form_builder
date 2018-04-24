@@ -5,7 +5,7 @@
 	<icone>galerie.jpg</icone>
 	<description>Créez vos formulaires avec un outil simple et intuitif !</description>
 	<state>enabled</state>
-	<version>1.4</version>
+	<version>1.5</version>
 	<checkVersionAt>https://raw.githubusercontent.com/numenorien0/form_builder/master/version.txt</checkVersionAt>
 	<downloadVersionAt>https://github.com/numenorien0/form_builder/archive/master.zip</downloadVersionAt>
 	<pages>
