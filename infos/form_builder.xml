@@ -3,7 +3,7 @@
 	<id>form_builder</id>
 	<name>Créateur de formulaire</name>
 	<icone>galerie.jpg</icone>
-	<description>Créez vos formulaires</description>
+	<description>Créez vos formulaires avec un outil simple et intuitif !</description>
 	<state>enabled</state>
 	<version>1.1</version>
 	<checkVersionAt></checkVersionAt>
