@@ -10,7 +10,7 @@
 	if(isset($_GET['delete']))
 	{
 		unlink("plugins/".$_GET['tools']."/widgets/".$_GET['delete']);
-		delete_shortcode($_GET['delete']);
+		delete_shortcode("Formbuilder - ".$_GET['delete']);
 		unlink("plugins/".$_GET['tools']."/forms/".$_GET['delete']);
 		
 		header("location: outils.php?tools=form_builder&page=index");
@@ -32,7 +32,7 @@
 			//WIDGET READY
 			//$widgetMaker
 			unlink("plugins/".$_GET['tools']."/widgets/".$_GET['id']);
-			delete_shortcode($_GET['id']);
+			delete_shortcode("Formbuilder - ".$_GET['id']);
 			add_shortcode("Formbuilder - ".$nom, "[shortcode plugin=form_builder id=\"".$nom."\"]", "");
 			file_put_contents("plugins/".$_GET['tools']."/widgets/".$nom, $widgetMaker);
 			//editable
