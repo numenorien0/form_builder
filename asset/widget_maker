@@ -1,6 +1,6 @@
 <?php
 
-if(isset($_POST['valider']) AND isset($_POST['sendTo']))
+if(isset($_POST['content']))
 {
 
 	$email = "[[EMAIL]]";
@@ -26,19 +26,16 @@ if(isset($_POST['valider']) AND isset($_POST['sendTo']))
 	}
 	
 	$paire = 0;
-	foreach($_POST['content'] as $champs)
+	foreach($_POST['content'] as $key => $champs)
 	{
-		$paire++;
-		if($paire == 2)
+		if($key == null)
 		{
-			$paire = 0;
-			$html .= $champs."<br/><br/>";
+			
 		}
 		else
 		{
-			$html .= "<strong>".$champs."</strong> : ";
+			$html .= "<strong>".$key."</strong><br/>".$champs."<br/><br/>";
 		}
-		
 	}	
 	
 	

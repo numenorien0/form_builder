@@ -114,7 +114,7 @@
 				<label class='col-md-4 labelLeft'>Nom du formulaire</label><input pattern="[a-zA-Z0-9]+" class='col-md-6' value='<?=$oldName?>' type='text' name='nameForm'/>
 			</div>
 			<h6 style='margin-top: 15px; font-weight: bold; font-size: 16px; text-align: center; margin-bottom: 15px;' >Composition du formulaire</h6>
-			<textarea id="form" name="form"><?=$contenu?></textarea>
+			<textarea id="form" name="form"><?=htmlentities($contenu)?></textarea>
 			<input type='submit' value='Sauvegarder' name='save'>
 			<div id='formPopup' style='display: none'>
 				<div class='col-md-8 col-md-offset-2'>
@@ -132,7 +132,7 @@
 					</div>
 					<div class='row'>
 						<label class='labelLeft col-md-2'>Nom</label>
-						<input class='col-md-10' id='name' type='text' />
+						<input required class='col-md-10' id='name' type='text' />
 					</div>
 					<div class='row'>
 						<label class='labelLeft col-md-2'>Placeholder</label>
@@ -335,37 +335,43 @@ tinymce.init({
 			           showPopup(); 
 			           
 			           $('#insert').click(function(){
-				           
-				           if($("#type").val() != "textarea")
+				           if($("#name").val() != "")
 				           {
-					           tinyMCE.activeEditor.selection.setNode(tinyMCE.activeEditor.dom.create('input', {
-						           class : $("#classe").val(),
-						           type: $("#type").val(),
-						           required: $("#required").val(),
-						           value: $("#value").val(),
-						           placeholder: $("#type").val(),
-						           name: $("#name").val(),
-						           style: "width: "+$("#width").val()
-						        }, ""));
+					           $("#name").css({"border":"initial"});
+					           if($("#type").val() != "textarea")
+					           {
+						           tinyMCE.activeEditor.selection.setNode(tinyMCE.activeEditor.dom.create('input', {
+							           class : $("#classe").val(),
+							           type: $("#type").val(),
+							           required: $("#required").val(),
+							           value: $("#value").val(),
+							           placeholder: $("#placeholder").val(),
+							           name: "content["+$("#name").val()+"]",
+							           style: "width: "+$("#width").val()
+							        }, ""));
+					           }
+					           else
+					           {
+						           tinyMCE.activeEditor.selection.setNode(tinyMCE.activeEditor.dom.create('textarea', {
+							           class : $("#classe").val(),
+							           type: $("#type").val(),
+							           required: $("#required").val(),
+							           value: $("#value").val(),
+							           placeholder: $("#placeholder").val(),
+							           name: "content["+$("#name").val()+"]",
+							           style: "width: "+$("#width").val()
+							        }, "")); 
+					           }
+					           
+					           
+					           
+					           $('.popup').html("").css({"height":"initial"});
+							   removePopup(); 
 				           }
 				           else
 				           {
-					           tinyMCE.activeEditor.selection.setNode(tinyMCE.activeEditor.dom.create('textarea', {
-						           class : $("#classe").val(),
-						           type: $("#type").val(),
-						           required: $("#required").val(),
-						           value: $("#value").val(),
-						           placeholder: $("#type").val(),
-						           name: $("#name").val(),
-						           style: "width: "+$("#width").val()
-						        }, "")); 
+					           $("#name").css({"border":"1px solid red"});
 				           }
-				           
-				           
-				           
-				           $('.popup').html("").css({"height":"initial"});
-			           removePopup(); 
-				           
 			           })
 			           
 			            
