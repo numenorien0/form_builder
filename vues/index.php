@@ -103,7 +103,7 @@
 		</div>
 	</div>
 	<div class='col-md-8'>
-		<form method='POST' action class='col-md-12 cadre'>
+		<form novalidate method='POST' action class='col-md-12 cadre'>
 			<h3>Personnalisation du formulaire</h3>
 			<hr>
 			<h6 style='font-weight: bold; font-size: 16px; text-align: center; margin-bottom: 15px;' >Option du formulaire</h6>
@@ -198,7 +198,7 @@ tinymce.init({
     	themes: "advanced",
     	skin: "light",
     	content_css: "themes/bootstrap.min.css, themes/reset.css",
- 		content_style: "#tinymce{padding: 15px} p{padding: 4px; display: block} .bootstrapElement{padding: 15px; border: 1px dotted #dadada}",
+ 		content_style: "input, textarea{border: 1px solid black} #tinymce{padding: 15px} p{padding: 4px; display: block} .bootstrapElement{padding: 15px; border: 1px dotted #dadada}",
  		font_formats: "Roboto (défaut)=Roboto, sans-serif;"+"Andale Mono=andale mono,times;"+ "Arial=arial,helvetica,sans-serif;"+ "Arial Black=arial black,avant garde;"+ "Book Antiqua=book antiqua,palatino;"+ "Comic Sans MS=comic sans ms,sans-serif;"+ "Courier New=courier new,courier;"+ "Georgia=georgia,palatino;"+ "Helvetica=helvetica;"+ "Impact=impact,chicago;"+ "Symbol=symbol;"+ "Tahoma=tahoma,arial,helvetica,sans-serif;"+ "Terminal=terminal,monaco;"+ "Times New Roman=times new roman,times;"+ "Trebuchet MS=trebuchet ms,geneva;"+ "Verdana=verdana,geneva;"+ "Webdings=webdings;"+ "Wingdings=wingdings,zapf dingbats",
  		fontsize_formats: "8px 10px 12px 14px 18px 24px 36px",
     	relative_urls : false,
