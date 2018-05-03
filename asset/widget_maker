@@ -37,7 +37,20 @@ if(isset($_POST['content']))
 			$html .= "<strong>".$key."</strong><br/>".$champs."<br/><br/>";
 		}
 	}	
-	
+	//print_r($_FILES);
+	foreach($_FILES['content']['name'] as $key => $file)
+	{
+		if(!file_exists("CMS/content/files/mail"))
+		{
+			mkdir("CMS/content/files/mail", 0777);
+		}
+		//exit("kk");
+		if(!move_uploaded_file($_FILES['content']['tmp_name'][$key], "CMS/content/files/mail/".$file))
+		{
+			//exit("ok");
+		}
+		$mail->AddAttachment("CMS/content/files/mail/".$file);
+	}
 	
 	//Typical mail data
 	$mail->AddAddress($email);
@@ -52,6 +65,14 @@ if(isset($_POST['content']))
 	try{
 	    $mail->Send();
 	    echo "<div class='col-sm-12'><div class='col-sm-12' id='successForm'>Message envoyé !</div></div>";
+	    $dossier = scandir("CMS/content/files/mail");
+	    foreach($dossier as $fichier)
+	    {
+		    if($fichier != "." AND $fichier != "..")
+		    {
+		    	unlink("CMS/content/files/mail/$fichier");
+			}
+	    }
 	} catch(Exception $e){
 	    //Something went bad
 	    echo "<div class='col-sm-12'><div class='col-sm-12' id='errorForm'></div></div>";
